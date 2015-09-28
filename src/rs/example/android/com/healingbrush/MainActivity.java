@@ -260,19 +260,22 @@ public class MainActivity extends Activity {
     }
     void getLocalImage() {
 
+        try {
         File folder;
         folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
         mImagePath = folder.getPath();
-        File[] files = folder.listFiles();
-        Log.v(TAG, "files" + files.length);
-        for (int i = 0; i < files.length; i++) {
-            Log.v(TAG, "[" + i + "]=" + files[i].getAbsolutePath());
-            if (files[i].getName().toLowerCase().endsWith(".jpg")) {
-                mDisplayedImage = BitmapFactory.decodeFile(files[i].getAbsolutePath());
-                mImagePath = files[i].getParentFile().getAbsolutePath();
-                mImageName = files[i].getName();
-                return;
+            File[] files = folder.listFiles();
+            Log.v(TAG, "files" + files.length);
+            for (int i = 0; i < files.length; i++) {
+                Log.v(TAG, "[" + i + "]=" + files[i].getAbsolutePath());
+                if (files[i].getName().toLowerCase().endsWith(".jpg")) {
+                    mDisplayedImage = BitmapFactory.decodeFile(files[i].getAbsolutePath());
+                    mImagePath = files[i].getParentFile().getAbsolutePath();
+                    mImageName = files[i].getName();
+                    return;
+                }
             }
+        } catch (Exception e) {
         }
 
         mDisplayedImage = BitmapFactory.decodeResource(this.getResources(), R.drawable.bugs);
