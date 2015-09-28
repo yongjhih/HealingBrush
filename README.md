@@ -6,7 +6,11 @@
 
 ## Live demo
 
-https://appetize.io/app/5bjftqtmxp90m68u3y2gk47j10
+* https://appetize.io/app/5bjftqtmxp90m68u3y2gk47j10
+
+## Download
+
+* apk: https://github.com/yongjhih/HealingBrush/releases/download/1.0.0/HealingBrush-debug.apk
 
 ## ref.
 
